@@ -25,6 +25,10 @@ public class DialogBoxInssetPresenter extends DialogBox {
         formateBox(demande, reponse);
     }
 
+    public DialogBoxInssetPresenter(String calcul_de_la_remise, String string) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
     private void formateBox(String demande, String reponse) {
 
 //         Create the popup dialog box
