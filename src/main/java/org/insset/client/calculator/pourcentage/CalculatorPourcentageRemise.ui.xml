@@ -4,7 +4,7 @@
 
     <g:HTMLPanel>
         <menu:Menu ui:field="menu"/>
-        <h1>Projet de mise en pratique Scrum</h1>>
+        <h1>Projet de mise en pratique Scrum</h1>
         <div class="bs-section">
             <g:FlowPanel>
                 
@@ -34,9 +34,6 @@
                     <g:ResetButton ui:field="boutonClear" text="Clear"/>
                 </g:FlowPanel>
                 
-            </g:FlowPanel>
-            <g:FlowPanel>
-               
             </g:FlowPanel>
         </div>
     </g:HTMLPanel>

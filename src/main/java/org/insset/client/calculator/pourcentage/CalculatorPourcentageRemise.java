@@ -32,10 +32,7 @@ public class CalculatorPourcentageRemise extends Composite {
     public TextBox pourcentageRemise;
     @UiField
     public Label errorLabel;
-    @UiField
-    public Label resultLabel;
-        @UiField
-    public Label errorLabelD;
+
 
     interface MainUiBinder extends UiBinder<HTMLPanel, CalculatorPourcentageRemise> {
     }
@@ -54,7 +51,7 @@ public class CalculatorPourcentageRemise extends Composite {
                 montantDepart.setText("");
                 pourcentageRemise.setText("");
                 errorLabel.setText("");
-                resultLabel.setText("");
+               // resultLabel.setText("");
             }
         });
         boutonCalculate.addClickHandler(new ClickHandler() {
@@ -94,9 +91,12 @@ public class CalculatorPourcentageRemise extends Composite {
 
             @Override
             public void onSuccess(Double result) {
-                 // resultLabel.setText("Prix final : " + result);
-                 new DialogBoxInssetPresenter("Calcul de la remise", "Montant de départ : " + montant + ",\nPourcentage de remise : " + pourcentage + "\nPrix final : " + result);
-
+             DialogBoxInssetPresenter dialog = new DialogBoxInssetPresenter(
+             "Calcul de la remise",
+             "Montant de départ : " + montant + "\nPourcentage de remise : " + pourcentage,
+            "\nPrix final : " + result
+             );
+    dialog.show(); // Montre la boîte de dialogue
             }
         });
     }
