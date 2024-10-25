@@ -25,4 +25,6 @@ public interface RomanConverterServiceAsync {
     void convertArabeToRoman(Integer nbr, AsyncCallback<String> callback);
 
     void convertDateYears(String nbr, AsyncCallback<String> callback);
+    
+     void divideTwoIntegers(Integer dividend, Integer divisor, AsyncCallback<Double> callback);
 }

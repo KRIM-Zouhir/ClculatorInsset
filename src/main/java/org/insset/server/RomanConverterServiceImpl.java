@@ -23,9 +23,42 @@ public class RomanConverterServiceImpl extends RemoteServiceServlet implements R
 
     @Override
     public Integer convertRomanToArabe(String nbr) throws IllegalArgumentException {
-        // Implémentez votre code
-        return 3;
+       if (nbr == null || nbr.isEmpty()) {
+            throw new IllegalArgumentException("Invalid input: Roman numeral cannot be null or empty.");
         }
+
+        int result = 0;
+        int prevValue = 0;
+
+        for (int i = nbr.length() - 1; i >= 0; i--) {
+            char romanChar = nbr.charAt(i);
+            int value = romanCharToInteger(romanChar);
+
+            if (value < prevValue) {
+                result -= value; // If current value is less than previous, subtract it
+            } else {
+                result += value; // Otherwise, add it
+            }
+
+            prevValue = value;
+        }
+
+        return result;
+        }
+    
+     private int romanCharToInteger(char romanChar) {
+        switch (romanChar) {
+            case 'I': return 1;
+            case 'V': return 5;
+            case 'X': return 10;
+            case 'L': return 50;
+            case 'C': return 100;
+            case 'D': return 500;
+            case 'M': return 1000;
+            default: throw new IllegalArgumentException("Invalid Roman numeral character: " + romanChar);
+        }
+    }
+
 
     @Override
     public String convertArabeToRoman(Integer nbr) throws IllegalArgumentException {
@@ -35,6 +68,19 @@ public class RomanConverterServiceImpl extends RemoteServiceServlet implements R
         // Appelle la méthode de conversion
         return ConvertirDecimalEnRomain.convertir(nbr);
     }
+    
+    @Override
+    public Double divideTwoIntegers(Integer dividend, Integer divisor) throws IllegalArgumentException {
+        if (divisor == null || divisor == 0) {
+            throw new IllegalArgumentException("Le diviseur ne peut pas être nul ou égal à zéro.");
+        }
+        if (dividend == null) {
+            throw new IllegalArgumentException("Le dividende ne peut pas être nul.");
+        }
+        double result = (double) dividend / divisor;
+        return result;
+    }
+
 
     // Classe pour la conversion des décimaux en chiffres romains
     public static class ConvertirDecimalEnRomain {

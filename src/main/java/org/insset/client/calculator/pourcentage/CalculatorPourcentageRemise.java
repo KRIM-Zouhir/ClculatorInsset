@@ -93,7 +93,7 @@ public class CalculatorPourcentageRemise extends Composite {
             public void onSuccess(Double result) {
              DialogBoxInssetPresenter dialog = new DialogBoxInssetPresenter(
              "Calcul de la remise",
-             "Montant de départ : " + montant + "\nPourcentage de remise : " + pourcentage,
+             "Montant de départ : " + montant + "\n , Pourcentage de remise : " + pourcentage + "%",
             "\nPrix final : " + result
              );
     dialog.show(); // Montre la boîte de dialogue
@@ -101,4 +101,3 @@ public class CalculatorPourcentageRemise extends Composite {
         });
     }
 }
-

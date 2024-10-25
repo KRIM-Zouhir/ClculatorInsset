@@ -52,7 +52,16 @@ public class CalculatorRomainPresenter extends Composite {
     public Label errorLabelAToR;
     @UiField
     public Label errorLabelD;
-
+    @UiField
+    public Label errorLabelDivide;
+    @UiField
+public TextBox valZ1;
+    @UiField
+    public TextBox valZ2; 
+@UiField
+    public ResetButton boutonClearY1;
+@UiField
+    public SubmitButton boutonDivide;
     interface MainUiBinder extends UiBinder<HTMLPanel, CalculatorRomainPresenter> {
     }
 
@@ -117,6 +126,22 @@ public class CalculatorRomainPresenter extends Composite {
             }
 
         });
+        
+        
+    boutonClearY1.addClickHandler(new ClickHandler() {
+        @Override
+        public void onClick(ClickEvent event) {
+            valZ1.setText("");
+            valZ2.setText("");
+            errorLabelDivide.setText("");
+        }
+    });
+         boutonDivide.addClickHandler(new ClickHandler() {
+        @Override
+        public void onClick(ClickEvent event) {
+            divideTwoIntegers();
+        }
+    });
     }
 
     /**
@@ -193,5 +218,43 @@ public class CalculatorRomainPresenter extends Composite {
             }
         });
     }
+    
+    private void divideTwoIntegers() {
+    Integer valeur1 = null;
+    Integer valeur2 = null;
+
+    try {
+        valeur1 = Integer.parseInt(valZ1.getText());
+        valeur2 = Integer.parseInt(valZ2.getText());
+    } catch (NumberFormatException e) {
+        errorLabelDivide.addStyleName("serverResponseLabelError");
+        errorLabelDivide.setText("Valeurs incorrectes");
+        return;
+    }
+
+    if (valeur2 == 0) {
+        errorLabelDivide.addStyleName("serverResponseLabelError");
+        errorLabelDivide.setText("Division par zéro interdite");
+        return;
+    }
+
+    // Appel du service pour diviser
+    service.divideTwoIntegers(valeur1, valeur2, new AsyncCallback<Double>() {
+        @Override
+        public void onFailure(Throwable caught) {
+            errorLabelDivide.setStyleName("serverResponseLabelError");
+            errorLabelDivide.setText("Erreur lors de la division");
+        }
+
+        @Override
+        public void onSuccess(Double result) {
+            errorLabelDivide.setText("");
+            new DialogBoxInssetPresenter("Résultat de la Division", 
+                    valZ1.getText() + " / " + valZ2.getText(), 
+                    String.valueOf(result));
+        }
+    });
+}
+
 
 }

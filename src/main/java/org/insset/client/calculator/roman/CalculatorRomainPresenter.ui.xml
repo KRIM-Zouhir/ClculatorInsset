@@ -58,6 +58,24 @@
                 <g:ResetButton ui:field="boutonClearD" text="Clear"/>
             </g:FlowPanel>
         </g:FlowPanel>
+        
+        <g:FlowPanel>
+            <g:FlowPanel>
+                <g:Label>Quels entiers voulez-vous diviser entre eux</g:Label>
+            </g:FlowPanel>
+            <g:FlowPanel>
+              <g:TextBox ui:field="valZ1" text="Entrer un entier"/>
+              <g:TextBox ui:field="valZ2" text="Entrer un entier"/>
+              <g:SubmitButton ui:field="boutonDivide" text="Divisier"/>
+            </g:FlowPanel>
+            <g:FlowPanel>
+                <g:Label ui:field="errorLabelDivide" ></g:Label>
+            </g:FlowPanel>
+            <g:FlowPanel >
+
+                <g:ResetButton ui:field="boutonClearY1" text="Clear"/>
+            </g:FlowPanel>
+        </g:FlowPanel>
       <!--</g:Form>-->
     </div>
     <!-- E. Container Right -->
