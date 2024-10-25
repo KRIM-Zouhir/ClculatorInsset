@@ -13,12 +13,12 @@ import com.google.gwt.user.client.ui.ResetButton;
 import com.google.gwt.user.client.ui.SubmitButton;
 import com.google.gwt.user.client.ui.TextBox;
 import org.insset.client.message.dialogbox.DialogBoxInssetPresenter;
-import org.insset.client.service.CalculatorPourcentageService;
-import org.insset.client.service.CalculatorPourcentageServiceAsync;
+import org.insset.client.service.PourcentageService;
+import org.insset.client.service.PourcentageServiceAsync;
 
 public class CalculatorPourcentageRemise extends Composite {
 
-    private final CalculatorPourcentageServiceAsync pourcentageService = GWT.create(CalculatorPourcentageService.class);
+    private final PourcentageServiceAsync pourcentageService = GWT.create(PourcentageService.class);
 
     @UiField
     public ResetButton boutonClear;

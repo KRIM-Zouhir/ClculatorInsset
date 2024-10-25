@@ -4,32 +4,39 @@
 
     <g:HTMLPanel>
         <menu:Menu ui:field="menu"/>
-        <h1>Calculateur de Remise</h1>
+        <h1>Projet de mise en pratique Scrum</h1>>
         <div class="bs-section">
             <g:FlowPanel>
+                
                 <g:FlowPanel>
                     <g:Label>Quel montant voulez-vous entrer?</g:Label>
                 </g:FlowPanel>
                 <g:FlowPanel>
                     <g:TextBox ui:field="montantDepart" text="Entrer un montant"/>
                 </g:FlowPanel>
-                <g:FlowPanel>
-                    <g:SubmitButton ui:field="boutonCalculate" text="Calculer"/>
-                </g:FlowPanel>
-                <g:FlowPanel>
-                    <g:Label ui:field="errorLabel"></g:Label>
-                </g:FlowPanel>
-                <g:FlowPanel>
-                    <g:ResetButton ui:field="boutonClear" text="Clear"/>
-                </g:FlowPanel>
-            </g:FlowPanel>
-            <g:FlowPanel>
+                
                 <g:FlowPanel>
                     <g:Label>Quel pourcentage de remise voulez-vous appliquer?</g:Label>
                 </g:FlowPanel>
                 <g:FlowPanel>
                     <g:TextBox ui:field="pourcentageRemise" text="Entrer un pourcentage"/>
                 </g:FlowPanel>
+                
+                <g:FlowPanel>
+                    <g:SubmitButton ui:field="boutonCalculate" text="Calculer"/>
+                </g:FlowPanel>
+                
+                <g:FlowPanel>
+                    <g:Label ui:field="errorLabel"></g:Label>
+                </g:FlowPanel>
+                
+                <g:FlowPanel>
+                    <g:ResetButton ui:field="boutonClear" text="Clear"/>
+                </g:FlowPanel>
+                
+            </g:FlowPanel>
+            <g:FlowPanel>
+                
                 <g:FlowPanel>
                     <g:Label ui:field="resultLabel"></g:Label>
                 </g:FlowPanel>

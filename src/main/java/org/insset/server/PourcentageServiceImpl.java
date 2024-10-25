@@ -1,13 +1,13 @@
 package org.insset.server;
 
 import com.google.gwt.user.server.rpc.RemoteServiceServlet;
-import org.insset.client.service.CalculatorPourcentageService;
+import org.insset.client.service.PourcentageService;
 
 /**
  * The server-side implementation of the percentage discount calculation service.
  */
 @SuppressWarnings("serial")
-public class PourcentageServiceImpl extends RemoteServiceServlet implements CalculatorPourcentageService {
+public class PourcentageServiceImpl extends RemoteServiceServlet implements PourcentageService {
 
     @Override
     public double calculateDiscount(double montant, double pourcentage) throws IllegalArgumentException {
