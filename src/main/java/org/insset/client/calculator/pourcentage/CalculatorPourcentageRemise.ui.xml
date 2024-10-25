@@ -36,10 +36,7 @@
                 
             </g:FlowPanel>
             <g:FlowPanel>
-                
-                <g:FlowPanel>
-                    <g:Label ui:field="resultLabel"></g:Label>
-                </g:FlowPanel>
+               
             </g:FlowPanel>
         </div>
     </g:HTMLPanel>

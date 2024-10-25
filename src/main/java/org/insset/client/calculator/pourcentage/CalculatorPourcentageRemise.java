@@ -16,6 +16,8 @@ import org.insset.client.message.dialogbox.DialogBoxInssetPresenter;
 import org.insset.client.service.PourcentageService;
 import org.insset.client.service.PourcentageServiceAsync;
 
+
+
 public class CalculatorPourcentageRemise extends Composite {
 
     private final PourcentageServiceAsync pourcentageService = GWT.create(PourcentageService.class);
@@ -32,6 +34,8 @@ public class CalculatorPourcentageRemise extends Composite {
     public Label errorLabel;
     @UiField
     public Label resultLabel;
+        @UiField
+    public Label errorLabelD;
 
     interface MainUiBinder extends UiBinder<HTMLPanel, CalculatorPourcentageRemise> {
     }
@@ -90,9 +94,11 @@ public class CalculatorPourcentageRemise extends Composite {
 
             @Override
             public void onSuccess(Double result) {
-                resultLabel.setText("Prix final : " + result);
-                new DialogBoxInssetPresenter("Calcul de la remise", "Montant de départ : " + montant + "\nPourcentage de remise : " + pourcentage + "\nPrix final : " + result);
+                 // resultLabel.setText("Prix final : " + result);
+                 new DialogBoxInssetPresenter("Calcul de la remise", "Montant de départ : " + montant + ",\nPourcentage de remise : " + pourcentage + "\nPrix final : " + result);
+
             }
         });
     }
 }
+
